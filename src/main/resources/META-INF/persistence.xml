@@ -1,0 +1,40 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="PERSISTENCE">
+		<description> Hibernate JPA Configuration Example</description>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="javax.persistence.jdbc.user" value="ibpsbankaudi" />
+			<property name="javax.persistence.jdbc.password" value="ibpsbankaudi" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<property name="hibernate.cache.use_second_level_cache"
+				value="true" />
+			<property name="hibernate.cache.region.factory_class"
+				value="org.hibernate.cache.jcache.JCacheRegionFactory" />
+			<property name="hibernate.javax.cache.provider" value="org.ehcache.jsr107.EhcacheCachingProvider" />
+
+			<property name="hibernate.cache.use_query_cache" value="true" />
+
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.connection.C3P0ConnectionProvider" />
+
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.acquire_increment" value="1" />
+			<property name="hibernate.c3p0.idle_test_period" value="300" />
+			<property name="hibernate.c3p0.max_statements" value="150" />
+			<property name="hibernate.c3p0.timeout" value="1800" />
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
